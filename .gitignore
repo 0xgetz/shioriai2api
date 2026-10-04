@@ -1,0 +1,21 @@
+# Binaries
+/shioriai2api
+/shioriai2api.exe
+/dist/
+
+# Secrets
+accounts.txt
+.env
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Build / test artifacts
+*.log
+*.out
+coverage.txt

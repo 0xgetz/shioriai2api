@@ -1,0 +1,17 @@
+services:
+  shioriai2api:
+    build: .
+    image: shioriai2api:latest
+    container_name: shioriai2api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      PROXY_API_KEY: "${PROXY_API_KEY:?set PROXY_API_KEY}"
+      SHIORI_REFRESH_TOKEN: "${SHIORI_REFRESH_TOKEN:-}"
+      SHIORI_COOKIE: "${SHIORI_COOKIE:-}"
+      SHIORI_PROXY: "${SHIORI_PROXY:-}"
+      DEFAULT_MODEL: "${DEFAULT_MODEL:-glm-5.3-flash}"
+    volumes:
+      - ./accounts.txt:/app/accounts.txt:ro
